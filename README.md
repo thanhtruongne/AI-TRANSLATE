@@ -90,6 +90,12 @@ npm start
 - FFmpeg
 - Web Audio API
 
+## Image
+
+<div align="center">
+    <img src="/client/assets//image.png" alt="Project Logo" width="200">
+</div>
+
 ## License
 
 MIT License - feel free to use this project for your own purposes.
