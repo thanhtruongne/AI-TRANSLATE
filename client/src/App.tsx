@@ -1,19 +1,19 @@
 import { Mic, PlayArrow, Stop, Translate } from '@mui/icons-material';
 import {
-    Box,
-    Button,
-    CircularProgress,
-    Container,
-    FormControl,
-    Grid,
-    InputLabel,
-    MenuItem,
-    Paper,
-    Select,
-    SelectChangeEvent,
-    styled,
-    TextField,
-    Typography,
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Paper,
+  Select,
+  SelectChangeEvent,
+  styled,
+  TextField,
+  Typography,
 } from '@mui/material';
 import axios from 'axios';
 import { useRef, useState } from 'react';
