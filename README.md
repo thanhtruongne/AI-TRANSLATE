@@ -93,7 +93,7 @@ npm start
 ## Image
 
 <div align="center">
-    <img src="/client/assets//image.png" alt="Project Logo" width="200">
+    <img src="/client/assets/image.png" alt="Project Logo" width="200">
 </div>
 
 ## License

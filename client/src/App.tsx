@@ -1,19 +1,19 @@
 import { Mic, PlayArrow, Stop, Translate } from '@mui/icons-material';
 import {
-  Box,
-  Button,
-  CircularProgress,
-  Container,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
-  SelectChangeEvent,
-  styled,
-  TextField,
-  Typography,
+    Box,
+    Button,
+    CircularProgress,
+    Container,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Paper,
+    Select,
+    SelectChangeEvent,
+    styled,
+    TextField,
+    Typography,
 } from '@mui/material';
 import axios from 'axios';
 import { useRef, useState } from 'react';
@@ -42,6 +42,8 @@ const SUPPORTED_LANGUAGES = [
   { code: 'ja', name: 'Japanese' },
   { code: 'ko', name: 'Korean' },
 ];
+
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 function App() {
   const [isRecording, setIsRecording] = useState(false);
@@ -92,7 +94,7 @@ function App() {
       const formData = new FormData();
       formData.append('audio', audioBlob);
 
-      const response = await axios.post('http://localhost:5000/api/audio-translate', formData, {
+      const response = await axios.post(`${API_URL}/api/audio-translate`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -109,7 +111,7 @@ function App() {
   const handleTranslation = async (text: string) => {
     try {
       setError(null);
-      const response = await axios.post('http://localhost:5000/api/translate', {
+      const response = await axios.post(`${API_URL}/api/translate`, {
         text,
         targetLanguage,
       });
@@ -135,7 +137,7 @@ function App() {
   const playTranslatedAudio = async () => {
     try {
       setError(null);
-      const response = await axios.post('http://localhost:5000/api/text-to-speech', {
+      const response = await axios.post(`${API_URL}/api/text-to-speech`, {
         text: translatedText,
         language: targetLanguage,
       });
